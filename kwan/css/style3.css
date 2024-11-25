@@ -33,13 +33,30 @@ h1 {
     overflow-x: auto;
     gap: 1rem;
     padding: 1rem 0.5rem;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
 }
 
-/* Chrome용 스크롤바 숨기기 */
-.album-slider::-webkit-scrollbar {
-    display: none;
+.album-slider {
+
+    
+    /* 스크롤바 스타일링 */
+    &::-webkit-scrollbar {
+        /* display: none; 대신 */
+        height: 8px;  /* 가로 스크롤바 높이 */
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: #2c2c2c;  /* 스크롤바 트랙 배경 */
+        border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: #666;  /* 스크롤바 색상 */
+        border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+        background: #888;  /* 호버 시 스크롤바 색상 */
+    }
 }
 
 /* 앨범 카드 스타일 */
@@ -107,3 +124,22 @@ h1 {
 .album-slider {
     scroll-behavior: smooth;
 }
+
+/* 기존 코드는 그대로 두고, 카테고리 섹션 스타일에만 추가 */
+.category-section {
+    position: relative;  /* 그라데이션 위치를 위해 추가 */
+    margin-bottom: 3rem;
+}
+
+/* 오른쪽 그라데이션 효과 추가 */
+.category-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50px;
+    background: linear-gradient(to right, transparent, #141414);
+    pointer-events: none;
+}
+
