@@ -1,0 +1,109 @@
+/* 기본 스타일 */
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #141414;  /* 넷플릭스 스타일 다크 테마 */
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.intro {
+    margin-bottom: 2rem;
+}
+
+/* 카테고리 섹션 스타일 */
+.category-section {
+    margin-bottom: 3rem;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+/* 앨범 슬라이더 */
+.album-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+/* Chrome용 스크롤바 숨기기 */
+.album-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* 앨범 카드 스타일 */
+.album-card {
+    flex: 0 0 auto;
+    width: 200px;
+    transition: transform 0.3s ease, scale 0.3s ease;
+    position: relative;
+}
+
+.album-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* 호버 효과 */
+.album-card:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+/* 앨범 제목 (호버 시 표시) */
+.album-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 4px 4px;
+}
+
+.album-card:hover .album-title {
+    opacity: 1;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .album-card {
+        width: 150px;
+    }
+
+    .album-card img {
+        height: 150px;
+    }
+}
+
+/* 추가적인 애니메이션 효과 */
+.album-card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 트랜지션을 부드럽게 */
+.album-slider {
+    scroll-behavior: smooth;
+}
