@@ -1,0 +1,94 @@
+/* styles.css */
+
+/* Main container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto; /* Center align the container */
+    padding: 20px;
+}
+
+/* Menu item styles */
+.menu-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Price and button container in menu */
+.menu-price-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between price and button */
+}
+
+/* Cart item styles */
+.cart-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Menu name style in cart */
+.menu-name {
+    flex: 1; /* Take remaining space */
+    margin-right: 10px;
+}
+
+/* Container for quantity controls and price */
+.controls-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Consistent spacing between elements */
+}
+
+/* Fixed-size box for quantity display */
+.quantity-box {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 40px; /* Fixed width */
+    height: 28px; /* Fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fixed-size box for price display */
+.price-box {
+    width: 100px; /* Fixed width */
+    text-align: right;
+}
+
+/* Button styles */
+button {
+    padding: 5px 10px;
+    margin: 0;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 28px;
+    min-width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Total amount display */
+#total {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: right;
+}

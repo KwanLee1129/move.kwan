@@ -1,0 +1,41 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Kiosk System</title>
+    <link rel="stylesheet" href="kwan/css/style4.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Cafe Kiosk</h1>
+        <!-- Menu Section -->
+        <div id="menu">
+            <h2>Menu</h2>
+            <div class="menu-item">
+                <span>Americano</span>
+                <div class="menu-price-container">
+                    <span>$4.00</span>
+                    <button onclick="addToCart('Americano', 4.00)">Add</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <span>Cafe Latte</span>
+                <div class="menu-price-container">
+                    <span>$4.50</span>
+                    <button onclick="addToCart('Cafe Latte', 4.50)">Add</button>
+                </div>
+            </div>
+        </div>
+        <!-- Cart Section -->
+        <div id="cart">
+            <h2>Cart</h2>
+            <div id="cart-items"></div>
+            <div id="total">Total: $0.00</div>
+        </div>
+    </div>
+    <script src="/kwan/js/script.js"></script>
+</body>
+</html>
