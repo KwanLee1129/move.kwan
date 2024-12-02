@@ -1,0 +1,95 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* 페이지 소개 섹션 */
+.page.introduce {
+    padding: 2rem;
+    text-align: center;
+}
+
+.page.introduce h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.page.introduce p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* 영화 리스트 섹션 */
+.film-list {
+    display: flex;           /* Grid 대신 Flex 사용 */
+    flex-wrap: wrap;         /* 공간 부족시 줄바꿈 */
+    justify-content: center; /* 가운데 정렬 */
+    gap: 2rem;              /* 아이템 간격 */
+    padding: 2rem;
+}
+
+/* 개별 영화 카드 */
+.film-list__item {
+    flex: 0 1 300px;        /* grow:0, shrink:1, basis:300px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    transition: transform 0.4s ease; /* 호버 효과를 위한 트랜지션 */
+}
+
+.film-list__item:hover {
+    transform: translateY(-20px);
+}
+
+/* 영화 제목 */
+.film-list__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    width: 100%;            /* 제목 너비 전체 사용 */
+    text-align: center;
+}
+
+/* 영화 이미지 */
+.film-list__item img {
+    width: 100%;
+    aspect-ratio: 2 / 3;    /* 2:3 비율 유지 */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* 영화 설명 */
+.film-list__description {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    margin-top: 0.5rem;
+    
+    /* 말줄임 처리 */
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .film-list {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .film-list__item {
+        flex-basis: 100%;   /* 모바일에서는 한 줄에 하나씩 */
+    }
+}

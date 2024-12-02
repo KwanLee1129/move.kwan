@@ -1,0 +1,57 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS 파일 연결 (URL 기반 경로 사용) -->
+    <!-- Link CSS file (Using URL-based path) -->
+    <link href="../practice2/assets/styles/style4.css" rel="stylesheet" />
+    <title>Cafe Kiosk System</title>
+  </head>
+  <body>
+    <!-- 메인 컨테이너 -->
+    <!-- Main container -->
+    <div class="container">
+      <h1>Cafe Kiosk</h1>
+
+      <!-- 메뉴 섹션: 사용자가 선택할 수 있는 메뉴 항목들 -->
+      <!-- Menu section: Items that users can select -->
+      <div id="menu">
+        <h2>Menu</h2>
+        <div class="menu-item">
+          <span>Americano</span>
+          <div class="menu-price-container">
+            <span>$4.00</span>
+            <!-- onclick 이벤트로 장바구니 추가 함수 호출 -->
+            <!-- Call addToCart function with onclick event -->
+            <button onclick="addToCart('Americano', 4.00)">Add</button>
+          </div>
+        </div>
+        <!-- 추가 메뉴 항목들 -->
+        <div class="menu-item">
+          <span>Flat white(5oz)</span>
+          <div class="menu-price-container">
+            <span>$5.00</span>
+            <!-- onclick 이벤트로 장바구니 추가 함수 호출 -->
+            <!-- Call addToCart function with onclick event -->
+            <button onclick="addToCart('Flat white(5oz)', 5.00)">Add</button>
+          </div>
+        </div>
+        <!-- Additional menu items -->
+      </div>
+
+      <!-- 장바구니 섹션: 선택된 항목들이 표시되는 영역 -->
+      <!-- Cart section: Area where selected items are displayed -->
+      <div id="cart">
+        <h2>Cart</h2>
+        <div id="cart-items"></div>
+        <div id="total">Total: $0.00</div>
+      </div>
+    </div>
+
+    <!-- JavaScript 파일 연결 (파일 시스템 경로 사용) -->
+    <!-- Link JavaScript file (Using file system path) -->
+    <script src="../practice2/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>소개 페이지</title>
+    <link href="../practice1/assets/styles/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>기록하며 성장하는 이동관입니다.</h1>
+    </header>
+    <main>
+      <section class="profile">
+        <img
+          src="../practice1/assets/images/image1.jpeg"
+          alt="Profile Image"
+          class="profile-image"
+        />
+        <h2 class="introduction">순간을 들여다보고 기록합니다.</h2>
+      </section>
+      <section class="contact">
+        <hr />
+        <p>
+          <b>저와 더 연락하고 싶다면?</b>
+        </p>
+        <ul>
+          <li>
+            이메일: <a href="mailto:your-email@example.com">dgwan2@naver.com</a>
+          </li>
+          <li>전화: <a href="tel:+8210-5147-2380">010-5147-2380</a></li>
+        </ul>
+      </section>
+      <section class="form">
+        <hr />
+        <p>
+          <b>하고 싶은 말을 적어 저에게 보내주세요!</b>
+        </p>
+        <form action="https://example.com/submit" method="POST">
+          <label for="email">이메일:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">하고 싶은 말:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <button type="submit">제출</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

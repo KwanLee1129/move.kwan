@@ -1,0 +1,96 @@
+/* style4.css */
+
+/* 메인 컨테이너 스타일 */
+/* Main container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto; /* 중앙 정렬 / Center alignment */
+    padding: 20px;
+}
+
+/* 메뉴 아이템 스타일 */
+/* Menu item styles */
+.menu-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex; /* Flexbox 레이아웃 사용 / Use flexbox layout */
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 메뉴 가격과 버튼을 포함하는 컨테이너 */
+/* Container for menu price and button */
+.menu-price-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 요소 간 간격 / Space between elements */
+}
+
+/* 장바구니 아이템 스타일 */
+/* Cart item styles */
+.cart-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+}
+
+/* 메뉴 이름 스타일 */
+/* Menu name styles */
+.menu-name {
+    flex: 1; /* 남은 공간을 모두 차지 / Take remaining space */
+    margin-right: 20px;
+}
+
+/* 컨트롤 버튼과 가격을 포함하는 컨테이너 */
+/* Container for control buttons and price */
+.controls-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 요소들 사이 간격 / Space between elements */
+}
+
+/* 수량 표시 박스 */
+/* Quantity display box */
+.quantity-box {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 40px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 가격 표시 영역 */
+/* Price display area */
+.price-box {
+    min-width: 80px; /* 최소 너비 설정 / Set minimum width */
+    text-align: right; /* 오른쪽 정렬 / Right align text */
+    font-weight: bold;
+}
+
+/* 버튼 스타일 */
+/* Button styles */
+button {
+    padding: 5px 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 28px;
+    min-width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background: #0056b3;
+}
