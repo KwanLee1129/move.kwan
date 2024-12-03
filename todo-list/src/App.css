@@ -1,125 +1,114 @@
 /* Main container styles
-   메인 컨테이너 스타일 */
+  메인 컨테이너 스타일 */
 .container {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 1.5rem;
+  width: 400px; /* 고정 너비 설정 */
+  margin: 0;
+  padding: 2rem;
   background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* Alert styles
-     알림 스타일 */
-.alert {
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Header styles
+     헤더 스타일 */
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
 }
 
-.alert-success {
-  background-color: #d4edda;
-  color: #155724;
-}
-
-.alert-error {
-  background-color: #f8d7da;
-  color: #721c24;
-}
-
-/* Input field styles
-     입력 필드 스타일 */
+/* Input container styles
+     입력 컨테이너 스타일 */
 .input-container {
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .input-field {
   width: 100%;
   padding: 0.75rem;
-  margin-bottom: 0.5rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
   font-size: 1rem;
+  background: #ffffff;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .add-button {
   width: 100%;
   padding: 0.75rem;
-  background-color: #007bff;
+  background-color: #4a90e2;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .add-button:hover {
-  background-color: #0056b3;
+  background-color: #357abd;
 }
 
 /* Todo list styles
      할 일 목록 스타일 */
 .todo-list {
-  list-style: none;
-  padding: 0;
+  width: 100%;
+  margin-top: 1.5rem;
 }
 
 .todo-item {
-  display: flex;
-  align-items: center;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
   padding: 1rem;
-  margin-bottom: 0.5rem;
-  background: #f8f9fa;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-}
-
-.todo-item:hover {
-  background: #e9ecef;
-}
-
-/* Error message styles
-     에러 메시지 스타일 */
-.error-message {
-  color: #dc3545;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-}
-
-/* Todo item specific styles
-   할 일 항목 특정 스타일 */
-.todo-item {
-  position: relative;
-  margin-bottom: 0.5rem;
-  padding: 1rem;
-  background: #fff;
-  border: 1px solid #e9ecef;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-}
-
-.todo-item:hover {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.todo-item.completed .todo-text {
-  text-decoration: line-through;
-  color: #6c757d;
-}
-
-.todo-checkbox {
-  margin-right: 1rem;
+  margin-bottom: 0.75rem;
+  box-sizing: border-box;
 }
 
 .todo-content {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
 }
 
+.todo-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.todo-checkbox {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.todo-text {
+  color: #2c3e50;
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #888888;
+}
+
+/* Action buttons styles
+     액션 버튼 스타일 */
 .todo-actions {
   display: flex;
   gap: 0.5rem;
@@ -130,66 +119,126 @@
   padding: 0.25rem 0.5rem;
   border: none;
   border-radius: 4px;
+  font-size: 0.75rem;
   cursor: pointer;
+  transition: opacity 0.2s;
 }
 
 .edit-btn {
-  background: #ffc107;
-  color: #000;
+  background: #f0f0f0;
+  color: #666666;
 }
 
 .delete-btn {
-  background: #dc3545;
-  color: #fff;
+  background: #ffebee;
+  color: #d32f2f;
 }
 
-.todo-date {
-  color: #6c757d;
-  font-size: 0.75rem;
+.edit-btn:hover,
+.delete-btn:hover {
+  opacity: 0.8;
 }
 
-.edit-form {
+/* Edit mode styles
+     수정 모드 스타일 */
+.edit-mode {
   display: flex;
   gap: 0.5rem;
+  flex: 1;
+  margin-left: 1rem;
 }
 
 .edit-input {
   flex: 1;
-  padding: 0.375rem 0.75rem;
-  border: 1px solid #ced4da;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
   border-radius: 4px;
+  font-size: 0.875rem;
+  color: #2c3e50;
+  text-align: center;
 }
 
 .save-btn,
 .cancel-btn {
-  padding: 0.375rem 0.75rem;
+  padding: 0.25rem 0.5rem;
   border: none;
   border-radius: 4px;
+  font-size: 0.75rem;
   cursor: pointer;
 }
 
 .save-btn {
-  background: #28a745;
-  color: #fff;
+  background: #4caf50;
+  color: white;
 }
 
 .cancel-btn {
-  background: #6c757d;
-  color: #fff;
+  background: #f0f0f0;
+  color: #666666;
+}
+
+/* Alert styles
+     알림 스타일 */
+.alert {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.alert-success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.alert-error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+.alert-close {
+  background: none;
+  border: none;
+  color: currentColor;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0;
 }
 
 /* Empty state styles
      빈 상태 스타일 */
 .empty-state {
+  width: 100%;
   text-align: center;
   padding: 2rem;
-  color: #6c757d;
+  color: #666666;
+  background: #f8f9fa;
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 
 /* Task counter styles
      작업 카운터 스타일 */
 .task-counter {
-  text-align: right;
-  color: #6c757d;
+  width: 100%;
+  text-align: center;
+  color: #666666;
   margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+/* Error message styles
+     에러 메시지 스타일 */
+.error-message {
+  width: 100%;
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  text-align: center;
 }

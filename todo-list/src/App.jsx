@@ -1,3 +1,5 @@
+// Main application component
+// 메인 애플리케이션 컴포넌트
 import { useState, useEffect } from "react";
 import TodoInput from "./components/todo/TodoInput";
 import TodoList from "./components/todo/TodoList";
@@ -5,8 +7,8 @@ import Alert from "./components/common/Alert";
 import "./App.css";
 
 function App() {
-  // Load initial data from localStorage
-  // 로컬 스토리지에서 초기 데이터 로드
+  // Initialize todos from localStorage
+  // localStorage에서 todos 초기화
   const [todos, setTodos] = useState(() => {
     try {
       const saved = localStorage.getItem("todos");
@@ -17,22 +19,18 @@ function App() {
     }
   });
 
-  // Alert state for user feedback
-  // 사용자 피드백을 위한 알림 상태
-  const [alert, setAlert] = useState({
-    show: false,
-    message: "",
-    type: "",
-  });
+  // Alert state for feedback
+  // 피드백을 위한 알림 상태
+  const [alert, setAlert] = useState({ show: false, message: "", type: "" });
 
-  // Update localStorage when todos change
-  // todos가 변경될 때 로컬 스토리지 업데이트
+  // Persist todos to localStorage
+  // localStorage에 todos 유지
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
   // Add new todo
-  // 새로운 할 일 추가
+  // 새 할 일 추가
   const handleAddTodo = (text) => {
     const newTodo = {
       id: Date.now(),
@@ -41,19 +39,41 @@ function App() {
       createdAt: new Date().toISOString(),
     };
     setTodos((prev) => [...prev, newTodo]);
+    showAlert("Task added successfully", "success");
+  };
 
-    // Show success feedback
-    // 성공 피드백 표시
-    setAlert({
-      show: true,
-      message: "Task added successfully",
-      type: "success",
-    });
+  // Toggle todo completion
+  // 할 일 완료 상태 토글
+  const handleToggle = (id) => {
+    setTodos((prev) =>
+      prev.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
 
-    // Hide alert after 3 seconds
-    // 3초 후 알림 숨김
+  // Update todo text
+  // 할 일 텍스트 업데이트
+  const handleUpdate = (id, newText) => {
+    setTodos((prev) =>
+      prev.map((todo) => (todo.id === id ? { ...todo, text: newText } : todo))
+    );
+    showAlert("Task updated successfully", "success");
+  };
+
+  // Delete todo
+  // 할 일 삭제
+  const handleDelete = (id) => {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+    showAlert("Task deleted successfully", "success");
+  };
+
+  // Show alert message
+  // 알림 메시지 표시
+  const showAlert = (message, type = "success") => {
+    setAlert({ show: true, message, type });
     setTimeout(() => {
-      setAlert((prev) => ({ ...prev, show: false }));
+      setAlert({ show: false, message: "", type: "" });
     }, 3000);
   };
 
@@ -61,20 +81,14 @@ function App() {
     <div className="container">
       <h1>Todo List</h1>
       {alert.show && (
-        <Alert {...alert} onClose={() => setAlert({ ...alert, show: false })} />
+        <Alert {...alert} onClose={() => setAlert({ show: false })} />
       )}
       <TodoInput onAdd={handleAddTodo} />
       <TodoList
         todos={todos}
-        onToggle={(id) => {
-          /* Toggle logic */
-        }}
-        onUpdate={(id, text) => {
-          /* Update logic */
-        }}
-        onDelete={(id) => {
-          /* Delete logic */
-        }}
+        onToggle={handleToggle}
+        onUpdate={handleUpdate}
+        onDelete={handleDelete}
       />
     </div>
   );

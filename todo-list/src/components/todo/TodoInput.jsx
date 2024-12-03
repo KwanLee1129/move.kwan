@@ -1,16 +1,14 @@
-import { useState } from "react";
+// TodoInput component: Handles new task input
+// TodoInput 컴포넌트: 새 작업 입력 처리
+import React, { useState } from "react";
 
 const TodoInput = ({ onAdd }) => {
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
 
-  // Handle form submission
-  // 폼 제출 처리
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Input validation
-    // 입력값 유효성 검사
     if (!input.trim()) {
       setError("Please enter a task");
       return;
@@ -27,7 +25,7 @@ const TodoInput = ({ onAdd }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="input-container">
+    <div className="input-container">
       <input
         type="text"
         value={input}
@@ -38,11 +36,11 @@ const TodoInput = ({ onAdd }) => {
         placeholder="Enter a new task"
         className="input-field"
       />
-      <button type="submit" className="add-button">
+      <button onClick={handleSubmit} className="add-button">
         Add Task
       </button>
       {error && <div className="error-message">{error}</div>}
-    </form>
+    </div>
   );
 };
 
