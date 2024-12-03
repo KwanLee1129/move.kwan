@@ -1,49 +1,85 @@
 import React, { useState } from "react";
 
+// TodoItem component: Renders individual todo items
+// TodoItem 컴포넌트: 개별 할 일 항목을 렌더링
 const TodoItem = ({ todo, onToggle, onUpdate, onDelete }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(todo.text);
 
-  const handleUpdate = () => {
-    onUpdate(todo.id, editText);
+  // Handle edit submission
+  // 수정 제출 처리
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (editText.trim() && editText !== todo.text) {
+      onUpdate(todo.id, editText);
+    }
     setIsEditing(false);
   };
 
+  // Format date to readable string
+  // 날짜를 읽기 쉬운 형식으로 변환
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  };
+
   return (
-    <div className="flex items-center p-3 bg-white rounded shadow-sm hover:bg-gray-50 transition-colors">
+    <div className={`todo-item ${todo.completed ? "completed" : ""}`}>
+      {/* Checkbox for completing todo */}
+      {/* 할 일 완료를 위한 체크박스 */}
       <input
         type="checkbox"
         checked={todo.completed}
         onChange={() => onToggle(todo.id)}
-        className="mr-3"
+        className="todo-checkbox"
       />
 
       {isEditing ? (
-        <input
-          type="text"
-          value={editText}
-          onChange={(e) => setEditText(e.target.value)}
-          onBlur={handleUpdate}
-          className="flex-1 px-2 py-1 border rounded"
-          autoFocus
-        />
+        // Edit mode
+        // 수정 모드
+        <form onSubmit={handleSubmit} className="edit-form">
+          <input
+            type="text"
+            value={editText}
+            onChange={(e) => setEditText(e.target.value)}
+            className="edit-input"
+            autoFocus
+          />
+          <button type="submit" className="save-btn">
+            Save
+          </button>
+          <button
+            type="button"
+            onClick={() => setIsEditing(false)}
+            className="cancel-btn"
+          >
+            Cancel
+          </button>
+        </form>
       ) : (
-        <span
-          className={`flex-1 ${
-            todo.completed ? "line-through text-gray-500" : ""
-          }`}
-          onDoubleClick={() => setIsEditing(true)}
-        >
-          {todo.text}
-        </span>
+        // Display mode
+        // 표시 모드
+        <div className="todo-content">
+          <span className="todo-text">{todo.text}</span>
+          <div className="todo-actions">
+            <button onClick={() => setIsEditing(true)} className="edit-btn">
+              Edit
+            </button>
+            <button onClick={() => onDelete(todo.id)} className="delete-btn">
+              Delete
+            </button>
+          </div>
+          {todo.createdAt && (
+            <small className="todo-date">
+              Created: {formatDate(todo.createdAt)}
+            </small>
+          )}
+        </div>
       )}
-
-      <button
-        onClick={() => onDelete(todo.id)}
-        className="ml-2 text-red-500 hover:text-red-700"
-      >
-        삭제
-      </button>
     </div>
   );
 };

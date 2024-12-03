@@ -1,31 +1,47 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const TodoInput = ({ onAdd }) => {
-  const [text, setText] = useState("");
+  const [input, setInput] = useState("");
+  const [error, setError] = useState("");
 
+  // Handle form submission
+  // 폼 제출 처리
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAdd(text);
-    setText("");
+
+    // Input validation
+    // 입력값 유효성 검사
+    if (!input.trim()) {
+      setError("Please enter a task");
+      return;
+    }
+
+    if (input.length > 50) {
+      setError("Task cannot exceed 50 characters");
+      return;
+    }
+
+    onAdd(input);
+    setInput("");
+    setError("");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mb-4">
-      <div className="flex gap-2">
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          className="flex-1 px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="할 일을 입력하세요"
-        />
-        <button
-          type="submit"
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          추가
-        </button>
-      </div>
+    <form onSubmit={handleSubmit} className="input-container">
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => {
+          setInput(e.target.value);
+          setError("");
+        }}
+        placeholder="Enter a new task"
+        className="input-field"
+      />
+      <button type="submit" className="add-button">
+        Add Task
+      </button>
+      {error && <div className="error-message">{error}</div>}
     </form>
   );
 };

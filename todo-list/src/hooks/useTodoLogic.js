@@ -1,34 +1,28 @@
 import { useState, useEffect } from "react";
+import { getTodos, saveTodos } from "../utils/localStorage";
 
+// Custom hook for managing todo business logic
+// Todo 비즈니스 로직 관리를 위한 커스텀 훅
 const useTodoLogic = () => {
-  const [todos, setTodos] = useState([]);
+  // Initialize todos from localStorage
+  // localStorage에서 todos 초기화
+  const [todos, setTodos] = useState(() => getTodos());
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
 
+  // Save todos to localStorage whenever they change
+  // todos가 변경될 때마다 localStorage에 저장
   useEffect(() => {
     try {
-      const savedTodos = localStorage.getItem("todos");
-      if (savedTodos) {
-        setTodos(JSON.parse(savedTodos));
-      }
+      saveTodos(todos);
     } catch (err) {
-      setError("Failed to load todos");
-    } finally {
-      setLoading(false);
+      setError("Failed to save todos");
+      console.error("Save error:", err);
     }
-  }, []);
+  }, [todos]);
 
-  useEffect(() => {
-    if (!loading) {
-      localStorage.setItem("todos", JSON.stringify(todos));
-    }
-  }, [todos, loading]);
-
+  // Add new todo
+  // 새로운 todo 추가
   const addTodo = (text) => {
-    if (!text.trim()) {
-      setError("Todo text cannot be empty");
-      return;
-    }
     const newTodo = {
       id: Date.now(),
       text: text.trim(),
@@ -36,26 +30,11 @@ const useTodoLogic = () => {
       createdAt: new Date().toISOString(),
     };
     setTodos((prev) => [...prev, newTodo]);
-    setError(null);
+    return newTodo;
   };
 
-  const updateTodo = (id, newText) => {
-    if (!newText.trim()) {
-      setError("Todo text cannot be empty");
-      return;
-    }
-    setTodos((prev) =>
-      prev.map((todo) =>
-        todo.id === id ? { ...todo, text: newText.trim() } : todo
-      )
-    );
-    setError(null);
-  };
-
-  const deleteTodo = (id) => {
-    setTodos((prev) => prev.filter((todo) => todo.id !== id));
-  };
-
+  // Toggle todo completion status
+  // todo 완료 상태 토글
   const toggleTodo = (id) => {
     setTodos((prev) =>
       prev.map((todo) =>
@@ -64,14 +43,29 @@ const useTodoLogic = () => {
     );
   };
 
+  // Update todo text
+  // todo 텍스트 업데이트
+  const updateTodo = (id, newText) => {
+    setTodos((prev) =>
+      prev.map((todo) =>
+        todo.id === id ? { ...todo, text: newText.trim() } : todo
+      )
+    );
+  };
+
+  // Delete todo
+  // todo 삭제
+  const deleteTodo = (id) => {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+  };
+
   return {
     todos,
     error,
-    loading,
     addTodo,
+    toggleTodo,
     updateTodo,
     deleteTodo,
-    toggleTodo,
   };
 };
 
