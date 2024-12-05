@@ -1,10 +1,12 @@
 {
+  "name": "move.kwan",
+  "private": true,
   "scripts": {
-    "deploy:kiosk": "gh-pages -d kiosk-system/dist -b gh-pages/kiosk-system",
-    "deploy:todo": "gh-pages -d todo-list/dist -b gh-pages/todo-list",
-    "deploy": "npm run deploy:kiosk && npm run deploy:todo"
+    "deploy-kiosk": "cd kiosk-system && npm install && npm run deploy",
+    "deploy-todo": "cd todo-list && npm install && npm run deploy",
+    "deploy-all": "npm run deploy-kiosk && npm run deploy-todo"
   },
   "devDependencies": {
-    "gh-pages": "^6.2.0"
+    "gh-pages": "^6.0.0"
   }
 }

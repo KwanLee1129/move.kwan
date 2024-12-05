@@ -1,29 +1,20 @@
 {
-  "name": "kiosk-app",
+  "name": "kiosk-system",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "homepage": "https://kwanlee1129.github.io/move.kwan//kiosk-system/",
+  "homepage": "https://kwanlee1129.github.io/move.kwan/kiosk-system/",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "preview": "vite preview"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.0"
+    "react-router-dom": "^6.4.4"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.0.0",
-    "autoprefixer": "^10.4.14",
-    "gh-pages": "^5.0.0",
-    "postcss": "^8.4.24",
-    "tailwindcss": "^3.3.2",
-    "vite": "^4.5.0"
+    "gh-pages": "^6.2.0",
+    "vite": "^4.0.0"
   }
 }
