@@ -1,16 +1,12 @@
 {
   "name": "todo-list",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "homepage": "https://kwanLee1129.github.io/move.kwan/todo-list",
+  "homepage": "https://kwanlee1129.github.io/move.kwan/todo-list",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.3.1",
