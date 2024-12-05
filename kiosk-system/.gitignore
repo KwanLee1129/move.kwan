@@ -1,5 +1,11 @@
+# Dependency directories
 node_modules/
+
+# Build directories
 dist/
-.env
-.DS_Store
+
+# Vite cache
 .vite/
+
+# OS-specific files
+.DS_Store

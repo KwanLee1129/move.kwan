@@ -1,1 +1,25 @@
-node_modules/.cache
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Build directories
+dist/
+
+# Vite cache
+.vite/
+
+# OS-specific files
+.DS_Store
+
+# IDE-specific files
+.vscode/
+.idea/
+*.sw?
+
+# 기타 서브 프로젝트에서 무시할 빌드 결과물
+kiosk-system/dist/
+todolist/dist/
