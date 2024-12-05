@@ -1,9 +1,10 @@
+import React from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
 import MenuList from "./components/menu/MenuList";
 import CartList from "./components/cart/CartList";
 import PaymentMethod from "./components/payment/PaymentMethod";
-import "./App.css"; // CSS 파일 임포트 필수
+import "./App.css";
 
 export default function App() {
   const handlePaymentSelect = (method) => {

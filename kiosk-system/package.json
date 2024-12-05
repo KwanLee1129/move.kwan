@@ -3,6 +3,7 @@
   "private": true,
   "homepage": "https://kwanlee1129.github.io/move.kwan/kiosk-system/",
   "scripts": {
+    "dev": "vite",
     "build": "vite build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -14,10 +15,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
-    "autoprefixer": "^10.4.20",
     "gh-pages": "^6.2.0",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.16",
     "vite": "^4.0.0"
   }
 }
