@@ -1,6 +1,4 @@
-// TodoItem component: Individual todo item display and management
-// TodoItem 컴포넌트: 개별 할 일 항목 표시 및 관리
-import React, { useState } from "react";
+import { useState } from "react";
 
 const TodoItem = ({ todo, onToggle, onUpdate, onDelete }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -15,7 +13,6 @@ const TodoItem = ({ todo, onToggle, onUpdate, onDelete }) => {
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleString("en-US", {
-      year: "numeric",
       month: "short",
       day: "numeric",
       hour: "2-digit",

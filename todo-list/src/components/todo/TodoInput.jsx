@@ -1,6 +1,4 @@
-// TodoInput component: Handles new task input
-// TodoInput 컴포넌트: 새 작업 입력 처리
-import React, { useState } from "react";
+import { useState } from "react";
 
 const TodoInput = ({ onAdd }) => {
   const [input, setInput] = useState("");

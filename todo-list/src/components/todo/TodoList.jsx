@@ -1,6 +1,3 @@
-// TodoList component: Manages the list of todos
-// TodoList 컴포넌트: 할 일 목록 관리
-import React from "react";
 import TodoItem from "./TodoItem";
 
 const TodoList = ({ todos, onToggle, onUpdate, onDelete }) => {
