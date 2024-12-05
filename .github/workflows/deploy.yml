@@ -6,34 +6,50 @@ on:
       - main
 
 permissions:
-  contents: write # 이 부분 추가
+  contents: write # GitHub Pages 배포 권한
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
 
+    steps:
+      # 1. 저장소 체크아웃
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # 2. Node.js 환경 설정
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: "18"
 
-      - name: Install Dependencies
+      # 3. 의존성 설치
+      - name: Install dependencies
         run: |
+          echo "Installing root dependencies..."
           npm install
+          echo "Installing kiosk-system dependencies..."
           cd kiosk-system && npm install && cd ..
+          echo "Installing todo-list dependencies..."
           cd todo-list && npm install && cd ..
 
-      - name: Build
+      # 4. 프로젝트 빌드
+      - name: Build projects
         run: |
+          echo "Cleaning and preparing dist directory..."
           rm -rf dist
           mkdir dist
           cp index.html dist/
+          echo "Building kiosk-system..."
           cd kiosk-system && npm run build && cp -r dist ../dist/kiosk-system && cd ..
+          echo "Building todo-list..."
           cd todo-list && npm run build && cp -r dist ../dist/todo-list && cd ..
+        env:
+          NODE_ENV: production
 
+      # 5. GitHub Pages 배포
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} #
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
