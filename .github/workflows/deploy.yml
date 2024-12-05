@@ -3,7 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # main 브랜치에 push가 발생하면 실행
+      - main
+
+permissions:
+  contents: write # 이 부분 추가
 
 jobs:
   deploy:
@@ -33,5 +36,4 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          github_token: ${{ secrets.GITHUB_TOKEN }} #
