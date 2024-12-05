@@ -1,37 +1,76 @@
-/* kiosk-system/src/App.css */
-
+/* 메인 컨테이너 */
 .kiosk-container {
-  width: 100%;
-  max-width: 1200px;
+  max-width: 1024px;
   margin: 0 auto;
-  padding: 2rem;
-  background: #ffffff;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
   padding: 1rem;
 }
 
-.menu-item {
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+/* 타이틀 */
+.kiosk-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+/* 레이아웃 구조 */
+.kiosk-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+/* 메뉴 섹션 */
+.menu-section {
+  background: white;
   border-radius: 8px;
   padding: 1rem;
-  text-align: center;
-  transition: transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.menu-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* 장바구니 섹션 */
+.cart-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* ... 나머지 필요한 스타일들 */
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .kiosk-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-section,
+  .cart-section {
+    width: 100%;
+  }
+}
+
+/* 공통 스타일 */
+button {
+  padding: 0.5rem 1rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #357abd;
+}
+
+/* 입력 필드 공통 스타일 */
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
