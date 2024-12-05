@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://kwanlee1129.github.io/move.kwan",
+  "homepage": "https://kwanlee1129.github.io/move.kwan//kiosk-system/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
