@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://KwanLee1129.github.io/move.kwan/todo-list",
+  "homepage": "https://kwanLee1129.github.io/move.kwan/todo-list",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
