@@ -5,9 +5,12 @@
   "scripts": {
     "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "dev": "vite"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.5.2",
+    "antd": "^5.22.3",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "react": "^18.2.0",

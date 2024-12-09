@@ -1,63 +1,66 @@
-import { useState, useEffect } from "react";
+import { useState, useCallback } from "react";
 
 const useTodoLogic = () => {
-  const [todos, setTodos] = useState(() => {
-    try {
-      const saved = localStorage.getItem("todos");
-      return saved ? JSON.parse(saved) : [];
-    } catch (error) {
-      console.error("Error loading todos:", error);
-      return [];
-    }
-  });
+  const [todos, setTodos] = useState([]);
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const [activeFilter, setActiveFilter] = useState("all");
 
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem("todos", JSON.stringify(todos));
-    } catch (err) {
-      setError("Failed to save todos");
-      console.error("Save error:", err);
-    }
-  }, [todos]);
-
-  const addTodo = (text) => {
+  const addTodo = useCallback((text) => {
     const newTodo = {
       id: Date.now(),
       text: text.trim(),
       completed: false,
-      createdAt: new Date().toISOString(),
+      timestamp: new Date().toISOString(),
     };
     setTodos((prev) => [...prev, newTodo]);
-    return newTodo;
-  };
+  }, []);
 
-  const toggleTodo = (id) => {
+  const toggleTodo = useCallback((id) => {
     setTodos((prev) =>
       prev.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
-  };
+  }, []);
 
-  const updateTodo = (id, text) => {
+  const updateTodo = useCallback((id, text) => {
     setTodos((prev) =>
-      prev.map((todo) => (todo.id === id ? { ...todo, text } : todo))
+      prev.map((todo) =>
+        todo.id === id ? { ...todo, text: text.trim() } : todo
+      )
     );
-  };
+  }, []);
 
-  const deleteTodo = (id) => {
+  const deleteTodo = useCallback((id) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== id));
-  };
+  }, []);
+
+  const getFilteredTodos = useCallback(() => {
+    return todos.filter((todo) => {
+      const matchesFilter =
+        activeFilter === "all" ||
+        (activeFilter === "active" && !todo.completed) ||
+        (activeFilter === "completed" && todo.completed);
+
+      const matchesSearch = todo.text
+        .toLowerCase()
+        .includes(searchKeyword.toLowerCase());
+
+      return matchesFilter && matchesSearch;
+    });
+  }, [todos, activeFilter, searchKeyword]);
 
   return {
     todos,
-    error,
+    searchKeyword,
+    setSearchKeyword,
+    activeFilter,
+    setActiveFilter,
     addTodo,
     toggleTodo,
     updateTodo,
     deleteTodo,
+    getFilteredTodos,
   };
 };
 

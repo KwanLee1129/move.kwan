@@ -1,44 +1,51 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Input, Button } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
+import { useTodoContext } from "../../context/TodoContext";
+import Alert from "../common/Alert";
 
-const TodoInput = ({ onAdd }) => {
-  const [input, setInput] = useState("");
+const TodoInput = () => {
+  const [inputText, setInputText] = useState("");
   const [error, setError] = useState("");
+  const { addTodo } = useTodoContext();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!input.trim()) {
+  const handleSubmit = () => {
+    if (!inputText.trim()) {
       setError("Please enter a task");
       return;
     }
-
-    if (input.length > 50) {
-      setError("Task cannot exceed 50 characters");
-      return;
-    }
-
-    onAdd(input);
-    setInput("");
+    addTodo(inputText);
+    setInputText("");
     setError("");
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
+  };
+
   return (
-    <div className="input-container">
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => {
-          setInput(e.target.value);
-          setError("");
-        }}
-        placeholder="Enter a new task"
-        className="input-field"
-      />
-      <button onClick={handleSubmit} className="add-button">
-        Add Task
-      </button>
-      {error && <div className="error-message">{error}</div>}
-    </div>
+    <>
+      {error && <Alert message={error} onClose={() => setError("")} />}
+      <div className="todo-input">
+        <Input
+          placeholder="Add new task..."
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          onKeyPress={handleKeyPress}
+          size="large"
+        />
+        <Button
+          type="primary"
+          icon={<PlusOutlined />}
+          onClick={handleSubmit}
+          size="large"
+        >
+          Add Task
+        </Button>
+      </div>
+    </>
   );
 };
 

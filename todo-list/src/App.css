@@ -1,254 +1,26 @@
-/* Main container styles
-   메인 컨테이너 스타일 */
-.container {
-  width: 400px;
-  margin: 0;
-  padding: 2rem;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Header styles
-     헤더 스타일 */
-h1 {
-  color: #2c3e50;
+.header {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.75rem;
+  margin-bottom: 20px;
 }
 
-/* Input container styles
-     입력 컨테이너 스타일 */
-.input-container {
-  width: 100%;
+.todo-input {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.input-field {
-  width: 90%;
-  padding: 0.75rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  font-size: 1rem;
-  background: #ffffff;
-  color: #2c3e50;
-  text-align: center;
+.search-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
 }
 
-.input-field:focus {
-  outline: none;
-  border-color: #4a90e2;
-  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
-}
-
-.add-button {
-  width: 90%;
-  padding: 0.75rem;
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.add-button:hover {
-  background-color: #357abd;
-}
-
-/* Todo list styles
-     할 일 목록 스타일 */
 .todo-list {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.todo-item {
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  padding: 1rem;
-  margin-bottom: 0.75rem;
-  display: flex;
-  align-items: center;
-}
-
-.todo-content {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.todo-checkbox {
-  width: 18px;
-  height: 18px;
-  margin-right: 1rem;
-  cursor: pointer;
-}
-
-.todo-text {
-  color: #2c3e50;
-  flex: 1;
-  margin-right: 1rem;
-}
-
-.todo-item.completed .todo-text {
-  text-decoration: line-through;
-  color: #888888;
-}
-
-/* Action buttons styles
-     액션 버튼 스타일 */
-.todo-actions {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.edit-btn,
-.delete-btn {
-  padding: 0.25rem 0.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.edit-btn {
-  background: #f0f0f0;
-  color: #666666;
-}
-
-.delete-btn {
-  background: #ffebee;
-  color: #d32f2f;
-}
-
-.edit-btn:hover,
-.delete-btn:hover {
-  opacity: 0.8;
-}
-
-/* Edit mode styles
-     수정 모드 스타일 */
-.edit-mode {
-  display: flex;
-  gap: 0.5rem;
-  flex: 1;
-  margin-left: 1rem;
-}
-
-.edit-input {
-  flex: 1;
-  padding: 0.5rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  font-size: 0.875rem;
-  color: #000000;
-  background: #ffffff;
-  text-align: center;
-}
-
-.save-btn,
-.cancel-btn {
-  padding: 0.25rem 0.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  cursor: pointer;
-}
-
-.save-btn {
-  background: #4caf50;
-  color: white;
-}
-
-.cancel-btn {
-  background: #f0f0f0;
-  color: #666666;
-}
-
-/* Alert styles
-     알림 스타일 */
-.alert {
-  width: 90%;
-  margin: 0 auto 1rem auto;
-  padding: 0.75rem 1rem;
-  border-radius: 6px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.alert-success {
-  background-color: #e8f5e9;
-  color: #2e7d32;
-  border: 1px solid #c8e6c9;
-}
-
-.alert-error {
-  background-color: #ffebee;
-  color: #c62828;
-  border: 1px solid #ffcdd2;
-}
-
-.alert-close {
-  background: none;
-  border: none;
-  color: currentColor;
-  font-size: 1.25rem;
-  cursor: pointer;
-  padding: 0;
-}
-
-/* Empty state styles
-     빈 상태 스타일 */
-.empty-state {
-  text-align: center;
-  padding: 2rem;
-  color: #666666;
-  background: #f8f9fa;
-  border-radius: 6px;
-  width: 90%;
-  margin: 0 auto;
-}
-
-/* Task counter styles
-     작업 카운터 스타일 */
-.task-counter {
-  text-align: center;
-  color: #666666;
-  margin-top: 1rem;
-  font-size: 0.875rem;
-  width: 90%;
-  margin: 1rem auto 0 auto;
-}
-
-/* Error message styles
-     에러 메시지 스타일 */
-.error-message {
-  color: #d32f2f;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-  text-align: center;
-  width: 90%;
-  margin: 0.5rem auto 0 auto;
-}
-.todo-date {
-  display: block;
-  font-size: 0.75rem;
-  color: #888888;
-  margin-top: 0.5rem;
-  text-align: left;
-  padding-left: 2.5rem;
+  margin-top: 20px;
 }
