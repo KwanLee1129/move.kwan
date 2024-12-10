@@ -1,10 +1,11 @@
+// App.jsx
 import React from "react";
-import { Layout, ConfigProvider } from "antd";
-import TodoList from "./components/todo/TodoList";
+import { ConfigProvider } from "antd";
 import { TodoProvider } from "./context/TodoContext";
+import Header from "./components/todo/Header";
+import TodoInput from "./components/todo/TodoInput";
+import TodoList from "./components/todo/TodoList";
 import "./App.css";
-
-const { Content } = Layout;
 
 const App = () => {
   return (
@@ -12,16 +13,18 @@ const App = () => {
       theme={{
         token: {
           colorPrimary: "#1890ff",
-          borderRadius: 6,
+          borderRadius: 8,
         },
       }}
     >
       <TodoProvider>
-        <Layout>
-          <Content className="app-container">
+        <div className="app-wrapper">
+          <div className="app-container">
+            <Header />
+            <TodoInput />
             <TodoList />
-          </Content>
-        </Layout>
+          </div>
+        </div>
       </TodoProvider>
     </ConfigProvider>
   );

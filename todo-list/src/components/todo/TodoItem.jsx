@@ -1,21 +1,23 @@
-import React, { useState } from "react";
-import { Button, Input, Typography, Checkbox } from "antd";
-import { EditOutlined, DeleteOutlined, SaveOutlined } from "@ant-design/icons";
+import React from "react";
+import { Checkbox, Button, Tag, Space } from "antd";
+import { DeleteOutlined } from "@ant-design/icons";
 import { useTodoContext } from "../../context/TodoContext";
-
-const { Text } = Typography;
+import moment from "moment";
 
 const TodoItem = ({ todo }) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [editText, setEditText] = useState(todo.text);
-  const { toggleTodo, deleteTodo, updateTodo } = useTodoContext();
+  const { toggleTodo, deleteTodo } = useTodoContext();
 
-  const handleSave = () => {
-    if (editText.trim()) {
-      updateTodo(todo.id, editText);
-      setIsEditing(false);
-    }
+  const getStatusTag = () => {
+    const due = moment(todo.dueDate);
+    const today = moment();
+
+    if (due.isSame(today, "day")) return { text: "Today", color: "blue" };
+    if (due.isSame(today.clone().add(7, "days"), "week"))
+      return { text: "This Week", color: "green" };
+    return { text: "Upcoming", color: "purple" };
   };
+
+  const status = getStatusTag();
 
   return (
     <div
@@ -24,70 +26,54 @@ const TodoItem = ({ todo }) => {
         display: "flex",
         alignItems: "center",
         padding: "12px",
-        gap: "12px",
         borderBottom: "1px solid #f0f0f0",
+        backgroundColor: todo.completed ? "#fafafa" : "white",
       }}
     >
       <Checkbox checked={todo.completed} onChange={() => toggleTodo(todo.id)} />
       <div
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
           flex: 1,
-          gap: "12px",
+          marginLeft: "12px",
+          display: "flex",
+          flexDirection: "column",
         }}
       >
-        <div style={{ flex: 1 }}>
-          {isEditing ? (
-            <Input
-              value={editText}
-              onChange={(e) => setEditText(e.target.value)}
-              onPressEnter={handleSave}
-              onBlur={handleSave}
-              autoFocus
-            />
-          ) : (
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <Text
-                style={{
-                  fontSize: "16px",
-                  textDecoration: todo.completed ? "line-through" : "none",
-                  color: todo.completed ? "#8c8c8c" : "inherit",
-                  marginRight: "8px",
-                }}
-              >
-                {todo.text}
-              </Text>
-              <Text
-                type="secondary"
-                style={{ fontSize: "12px", whiteSpace: "nowrap" }}
-              >
-                {new Date(todo.timestamp).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                })}
-              </Text>
-            </div>
-          )}
+        <div>
+          <Space size={4}>
+            <span
+              style={{
+                textDecoration: todo.completed ? "line-through" : "none",
+                color: todo.completed ? "#888" : "#000",
+              }}
+            >
+              {todo.text}
+            </span>
+            <Tag
+              color={
+                todo.priority === "Daily"
+                  ? "red"
+                  : todo.priority === "Weekly"
+                  ? "orange"
+                  : "green"
+              }
+            >
+              {todo.priority}
+            </Tag>
+            <Tag color="blue">{todo.category}</Tag>
+            <Tag color={status.color}>{status.text}</Tag>
+          </Space>
         </div>
-        <div style={{ display: "flex", gap: "4px", marginLeft: "auto" }}>
-          <Button
-            type="text"
-            icon={isEditing ? <SaveOutlined /> : <EditOutlined />}
-            onClick={() => (isEditing ? handleSave() : setIsEditing(true))}
-            title={isEditing ? "Save changes" : "Edit task"}
-          />
-          <Button
-            type="text"
-            danger
-            icon={<DeleteOutlined />}
-            onClick={() => deleteTodo(todo.id)}
-            title="Delete task"
-          />
-        </div>
+        <span style={{ fontSize: "12px", color: "#888", marginTop: "4px" }}>
+          {moment(todo.dueDate).format("MMM D, YYYY")}
+        </span>
       </div>
+      <Button
+        type="text"
+        danger
+        icon={<DeleteOutlined />}
+        onClick={() => deleteTodo(todo.id)}
+      />
     </div>
   );
 };

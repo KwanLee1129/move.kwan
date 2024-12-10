@@ -1,43 +1,44 @@
 import React from "react";
-import { Typography, Button, Tooltip, Badge } from "antd";
+import { Typography, Radio, Badge } from "antd";
 import { useTodoContext } from "../../context/TodoContext";
 
 const { Title } = Typography;
 
 const Header = () => {
-  const { activeFilter, setActiveFilter, getFilterCounts } = useTodoContext();
-  const counts = getFilterCounts();
+  const { filter, setFilter, todos } = useTodoContext();
 
-  const filters = [
-    { key: "all", label: "All", tooltip: "View all tasks" },
-    { key: "active", label: "Active", tooltip: "View uncompleted tasks" },
-    { key: "completed", label: "Completed", tooltip: "View completed tasks" },
-  ];
+  const getCounts = () => ({
+    all: todos.length,
+    active: todos.filter((todo) => !todo.completed).length,
+    completed: todos.filter((todo) => todo.completed).length,
+  });
+
+  const counts = getCounts();
 
   return (
     <div className="header">
       <Title level={2}>Task Manager</Title>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "12px",
-          marginTop: "16px",
-        }}
-      >
-        {filters.map(({ key, label, tooltip }) => (
-          <Tooltip key={key} title={tooltip}>
-            <Badge count={counts[key]} offset={[-10, 0]}>
-              <Button
-                type={activeFilter === key ? "primary" : "default"}
-                onClick={() => setActiveFilter(key)}
-                style={{ minWidth: "120px" }}
-              >
-                {label}
-              </Button>
-            </Badge>
-          </Tooltip>
-        ))}
+      <div className="filter-group">
+        <Radio.Group
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+          buttonStyle="solid"
+        >
+          {[
+            { key: "all", label: "All" },
+            { key: "active", label: "Active" },
+            { key: "completed", label: "Completed" },
+          ].map(({ key, label }) => (
+            <Radio.Button key={key} value={key}>
+              {label}
+              <Badge
+                count={counts[key]}
+                className="status-badge"
+                size="small"
+              />
+            </Radio.Button>
+          ))}
+        </Radio.Group>
       </div>
     </div>
   );
