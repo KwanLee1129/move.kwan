@@ -341,11 +341,10 @@ const Portfolio = () => {
               ))}
             </div>
           </div>
-          // 마지막 부분 수정
         </div>
       </div>
     </div>
   );
 };
 
-export default Portfolio; // export 추가
+export default Portfolio;
