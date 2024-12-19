@@ -3,9 +3,10 @@
   "private": true,
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist && cp index.html dist/",
-    "build": "npm run build-kiosk && npm run build-todo",
+    "build": "npm run build-kiosk && npm run build-todo && npm run build-portfolio",
     "build-kiosk": "cd kiosk-system && npm install && npm run build && cp -r dist ../dist/kiosk-system",
     "build-todo": "cd todo-list && npm install && npm run build && cp -r dist ../dist/todo-list",
+    "build-portfolio": "cd todo-list && npm install && npm run build && cp -r dist ../dist/my-portfolio",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
