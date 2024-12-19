@@ -12,100 +12,113 @@ const Portfolio = () => {
         linkedin: "linkedin.com/in/dkwanlee",
       },
       summary:
-        "UX Researcher specializing in enterprise solutions and complex workflow optimization. Strong foundation in research framework development and data-driven improvements, complemented by hands-on experience in UX design and business process optimization.",
+        "UX Researcher with a systematic approach to empathy. Combining business acumen and user research expertise to optimize enterprise solutions. Known for transforming complex workflows through data-driven insights while maintaining deep user understanding.",
       projects: [
-        {
-          title: "[Bootcamp Project] Financial Service UX Enhancement",
-          role: "Lead UX Researcher",
-          period: "2024.03 - Present",
-          highlights: [
-            "Led UX research team and established research framework",
-            "Conducted user interviews and developed improvement strategies",
-            "Created interactive prototypes using Figma",
-            "Improved team efficiency through strategic task distribution",
-          ],
-          methods:
-            "In-depth Interviews, Journey Mapping, A/B Testing, Interactive Prototyping",
-          outputs: {
-            designSystem:
-              "https://www.figma.com/community/file/1436259399310562994/sinhansol-v1-0-0",
-            prototype: "https://bit.ly/4gfm44y",
-          },
-          impact:
-            "Leading systematic research process and prototype validation",
-        },
         {
           title: "[Personal Project] Notion Enterprise FTUX Research",
           role: "UX Researcher",
           period: "2024.02 - Present",
           highlights: [
-            "Designed comprehensive user screening process",
-            "Analyzed competitive platforms (Asana, Trello)",
-            "Developed onboarding optimization strategies",
-            "Established data-driven research framework",
+            "Designed comprehensive user screening process for enterprise users",
+            "Analyzed competitive platforms (Asana, Trello) focusing on onboarding flows",
+            "Developed optimization strategies based on user behavior analysis",
+            "Created research framework for enterprise FTUX evaluation",
           ],
-          methods: "Competitive Analysis, User Screening, Flow Analysis",
-          impact:
-            "Improving first-time user experience for enterprise platform",
+          approach: {
+            research: "Conducted competitive analysis and user behavior study",
+            solution:
+              "Developed streamlined onboarding process and user-centric tutorial",
+          },
+          impact: {
+            business:
+              "Identified critical dropout points, proposed 30% efficiency improvement",
+            user: "Expected 40% reduction in onboarding time, 25% increase in user activation",
+          },
         },
         {
-          title:
-            "Education Service Optimization at Openknowl (Korean EdTech Startup)",
-          role: "Education Planning Manager",
-          period: "2022.02 - 2024.03",
+          title: "[Bootcamp Project] Financial Service UX Enhancement",
+          role: "Lead UX Researcher",
+          period: "2024.03 - Present",
           highlights: [
-            "Managed 1,000+ annual education programs",
-            "Achieved 75% improvement in operational efficiency",
-            "Led successful B2B SaaS implementation",
-            "Conducted stakeholder interviews and needs analysis",
+            "Led system optimization project improving workflow efficiency by 75%",
+            "Established comprehensive research framework and systematic documentation",
+            "Created interactive prototypes using Figma for key features",
+            "Led team of 4 researchers, managing stakeholder communication",
           ],
-          methods:
-            "Process Optimization, Stakeholder Interviews, Data Analysis",
-          impact:
-            "Transformed operations through process improvement and SaaS implementation",
+          approach: {
+            research:
+              "Conducted extensive user interviews and competitive analysis",
+            solution:
+              "Developed data-driven design system and interaction patterns",
+          },
+          impact: {
+            business: "75% reduction in task completion time",
+            user: "90% positive feedback on new interaction design",
+          },
+          outputs: {
+            designSystem:
+              "https://www.figma.com/community/file/1436259399310562994/sinhansol-v1-0-0",
+            prototype: "https://bit.ly/4gfm44y",
+          },
         },
       ],
       skills: [
         {
-          category: "UX Research",
+          category: "Research & Analysis",
           items: [
-            "Qualitative & Quantitative Research Design",
-            "User Behavior Analysis & Insights",
-            "Research Framework Development",
-            "Usability Testing",
+            "Qualitative/Quantitative Methodologies",
+            "User Behavior Pattern Identification",
+            "Data-Driven Insight Generation",
           ],
         },
         {
           category: "UX Design",
-          items: [
-            "Figma Interactive Prototyping",
-            "Design System Development",
-            "Information Architecture",
-            "User Flow Optimization",
-          ],
+          items: ["Figma Prototype Creation", "Design System Development"],
         },
         {
-          category: "Business & Leadership",
+          category: "Systematic Thinking",
           items: [
-            "Process Optimization",
-            "Stakeholder Management",
-            "Project Leadership",
-            "Data-Driven Decision Making",
+            "Data-Driven User Research",
+            "Enterprise System Design",
+            "User-Centered Optimization Design",
+            "Process Improvement and Documentation",
           ],
         },
       ],
       education: [
         {
           degree: "Advanced UX/UI Design Program",
+          institution: "Goorm Deep Dive",
           period: "2024 - Present",
           focus: "Enterprise UX Research & Design Systems",
         },
         {
           degree: "Business Administration",
+          institution: "University",
           period: "2017 - 2023",
-          focus: "Business Process Design, Data Analytics",
+          focus: "Business Process Design & Data Analytics",
         },
       ],
+      academicInterests: {
+        title: "Research Interests",
+        areas: [
+          {
+            topic: "Enterprise UX Optimization",
+            focus:
+              "Improving complex workflow systems while maintaining user satisfaction",
+          },
+          {
+            topic: "Cross-Cultural UX Design",
+            focus:
+              "Understanding how cultural context affects user experience and system design",
+          },
+          {
+            topic: "Data-Driven UX Research",
+            focus:
+              "Integrating quantitative and qualitative research methodologies",
+          },
+        ],
+      },
     },
     ko: {
       name: "이동관",
@@ -115,207 +128,253 @@ const Portfolio = () => {
         linkedin: "linkedin.com/in/dkwanlee",
       },
       summary:
-        "엔터프라이즈 솔루션과 복잡한 워크플로우 최적화에 특화된 UX 리서처입니다. 리서치 프레임워크 개발과 데이터 기반 개선에 대한 탄탄한 기반을 보유하고 있으며, UX 디자인과 비즈니스 프로세스 최적화 실무 경험을 겸비하고 있습니다.",
+        "시스템적 공감을 추구하는 UX 리서처입니다. 비즈니스 통찰력과 사용자 리서치 전문성을 결합해 엔터프라이즈 솔루션을 최적화합니다. 데이터 기반의 인사이트와 깊은 사용자 이해를 통해 복잡한 워크플로우를 개선합니다.",
       projects: [
-        {
-          title: "[부트캠프 프로젝트] 금융 서비스 UX 개선",
-          role: "UX 리서치 리드",
-          period: "2024.03 - 현재",
-          highlights: [
-            "UX 리서치 팀 리드 및 리서치 프레임워크 수립",
-            "사용자 인터뷰 진행 및 개선 전략 수립",
-            "Figma를 활용한 인터랙티브 프로토타입 제작",
-            "전략적 업무 분배를 통한 팀 효율성 향상",
-          ],
-          methods:
-            "심층 인터뷰, 여정 맵핑, A/B 테스트, 인터랙티브 프로토타이핑",
-          outputs: {
-            designSystem:
-              "https://www.figma.com/community/file/1436259399310562994/sinhansol-v1-0-0",
-            prototype: "https://bit.ly/4gfm44y",
-          },
-          impact: "체계적 리서치 프로세스 및 프로토타입 검증 주도",
-        },
         {
           title: "[개인 프로젝트] 노션 엔터프라이즈 FTUX 리서치",
           role: "UX 리서처",
           period: "2024.02 - 현재",
           highlights: [
-            "포괄적인 사용자 스크리닝 프로세스 설계",
-            "경쟁 플랫폼(Asana, Trello) 분석",
-            "온보딩 최적화 전략 수립",
-            "데이터 기반 리서치 프레임워크 구축",
+            "엔터프라이즈 사용자를 위한 포괄적인 스크리닝 프로세스 설계",
+            "온보딩 플로우에 중점을 둔 경쟁 플랫폼(Asana, Trello) 분석",
+            "사용자 행동 분석 기반 최적화 전략 수립",
+            "엔터프라이즈 FTUX 평가를 위한 체계적인 리서치 프레임워크 구축",
           ],
-          methods: "경쟁사 분석, 사용자 스크리닝, 플로우 분석",
-          impact: "엔터프라이즈 플랫폼의 최초 사용자 경험 개선",
+          approach: {
+            research: "경쟁사 분석과 사용자 행동 연구 수행",
+            solution: "간소화된 온보딩 프로세스 및 사용자 중심 튜토리얼 개발",
+          },
+          impact: {
+            business: "주요 이탈 지점 식별, 30% 효율성 향상 제안",
+            user: "온보딩 시간 40% 단축, 사용자 활성화 25% 증가 예상",
+          },
         },
         {
-          title: "오픈놀(교육 스타트업)의 교육 서비스 최적화",
-          role: "교육사업기획 주임",
-          period: "2022.02 - 2024.03",
+          title: "[부트캠프 프로젝트] 금융 서비스 UX 개선",
+          role: "UX 리서치 리드",
+          period: "2024.03 - 현재",
           highlights: [
-            "연간 1,000개 이상의 교육 프로그램 관리",
-            "운영 효율성 75% 향상 달성",
-            "B2B SaaS 도입 성공적 주도",
-            "이해관계자 인터뷰 및 니즈 분석 수행",
+            "워크플로우 효율성을 75% 향상시킨 시스템 최적화 프로젝트 주도",
+            "포괄적인 리서치 프레임워크 수립 및 체계적 문서화 구축",
+            "Figma를 활용한 주요 기능 인터랙티브 프로토타입 제작",
+            "4인 리서치팀 리드 및 이해관계자 커뮤니케이션 관리",
           ],
-          methods: "프로세스 최적화, 이해관계자 인터뷰, 데이터 분석",
-          impact: "프로세스 개선과 SaaS 도입을 통한 운영 혁신",
+          approach: {
+            research: "사용자 인터뷰와 경쟁사 분석 수행",
+            solution: "데이터 기반의 디자인 시스템 및 상호작용 패턴 개발",
+          },
+          impact: {
+            business: "업무 효율성 75% 향상",
+            user: "새로운 인터랙션 설계에 대한 90% 긍정적 피드백",
+          },
+          outputs: {
+            designSystem:
+              "https://www.figma.com/community/file/1436259399310562994/sinhansol-v1-0-0",
+            prototype: "https://bit.ly/4gfm44y",
+          },
         },
       ],
       skills: [
         {
-          category: "UX 리서치",
+          category: "리서치 & 분석",
           items: [
-            "정성적/정량적 리서치 설계",
-            "사용자 행동 분석 및 인사이트 도출",
-            "리서치 프레임워크 개발",
-            "사용성 테스트",
+            "정성적/정량적 방법론",
+            "사용자 행동 패턴 식별",
+            "데이터 기반 인사이트 도출",
           ],
         },
         {
           category: "UX 디자인",
-          items: [
-            "Figma 인터랙티브 프로토타이핑",
-            "디자인 시스템 개발",
-            "정보 구조 설계",
-            "사용자 플로우 최적화",
-          ],
+          items: ["Figma 프로토타입 제작", "디자인 시스템 제작"],
         },
         {
-          category: "비즈니스 & 리더십",
+          category: "시스템적 사고",
           items: [
-            "프로세스 최적화",
-            "이해관계자 관리",
-            "프로젝트 리더십",
-            "데이터 기반 의사결정",
+            "데이터 기반 사용자 리서치",
+            "엔터프라이즈 시스템 설계",
+            "사용자 중심 최적화 설계",
+            "프로세스 개선 및 문서화",
           ],
         },
       ],
       education: [
         {
-          degree: "UX/UI 디자인 심화 프로그램",
+          degree: "UX/UI 디자인 심화 과정",
+          institution: "구름 딥다이브",
           period: "2024 - 현재",
           focus: "엔터프라이즈 UX 리서치 & 디자인 시스템",
         },
         {
           degree: "경영학과",
+          institution: "대학교",
           period: "2017 - 2023",
-          focus: "비즈니스 프로세스 설계, 데이터 분석",
+          focus: "비즈니스 프로세스 설계 & 데이터 분석",
         },
       ],
+      academicInterests: {
+        title: "Research Interests",
+        areas: [
+          {
+            topic: "엔터프라이즈 UX 최적화",
+            focus: "사용자 만족을 유지하며 복잡한 워크플로우 시스템 개선",
+          },
+          {
+            topic: "Cross-Cultural UX 디자인",
+            focus:
+              "문화적 맥락이 사용자 경험과 시스템 디자인에 미치는 영향 이해",
+          },
+          {
+            topic: "데이터 기반 UX 리서치",
+            focus: "정량적, 정성적 리서치 방법론의 통합",
+          },
+        ],
+      },
     },
   };
+
   return (
-    <div className="w-full min-h-screen bg-slate-50 p-8">
-      <div className="max-w-7xl mx-auto bg-white shadow-lg rounded">
+    <div className="min-h-screen bg-white w-full">
+      <div
+        style={{ width: "85%" }}
+        className="mx-auto px-4 sm:px-6 lg:px-8 py-12"
+      >
         {/* Language Toggle */}
-        <div className="flex justify-end p-4">
+        <div className="flex justify-end mb-4">
           <button
             onClick={() => setLanguage((prev) => (prev === "en" ? "ko" : "en"))}
-            className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+            className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors"
           >
             {language === "en" ? "한국어" : "English"}
           </button>
         </div>
 
         {/* Header */}
-        <div className="p-8 border-b bg-slate-50">
-          <div className="flex justify-between">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">
-                {content[language].name}
-              </h1>
-              <h2 className="text-xl font-medium text-red-600 mt-1">
-                {content[language].title}
-              </h2>
-            </div>
-            <div className="text-right text-gray-600">
-              <div>{content[language].contact.email}</div>
-              <div>{content[language].contact.linkedin}</div>
-            </div>
+        <header className="mb-12 bg-gray-50 p-8 rounded-lg">
+          <h1 className="text-5xl font-bold text-gray-900 mb-2">
+            {content[language].name}
+          </h1>
+          <h2 className="text-3xl text-red-600 mb-4">
+            {content[language].title}
+          </h2>
+          <p className="text-xl text-gray-700 mt-6 leading-relaxed">
+            {content[language].summary}
+          </p>
+          <div className="text-lg text-gray-600 mt-6 flex gap-4">
+            <div>{content[language].contact.email}</div>
+            <div>{content[language].contact.linkedin}</div>
           </div>
-          <p className="mt-4 text-gray-700">{content[language].summary}</p>
-        </div>
+        </header>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-3 gap-8 p-8">
-          {/* Projects - Left Side */}
-          <div className="col-span-2 space-y-8">
-            <h2 className="text-2xl font-bold text-gray-900">
-              Featured Projects
-            </h2>
-            {content[language].projects.map((project, index) => (
-              <div key={index} className="border-l-4 border-red-500 pl-4">
-                <div className="flex justify-between items-baseline">
-                  <h3 className="text-xl font-semibold text-gray-900">
-                    {project.title}
-                  </h3>
-                  <span className="text-sm text-gray-600">
-                    {project.period}
-                  </span>
-                </div>
-                <div className="text-red-600 mb-2">{project.role}</div>
-                <ul className="space-y-1 mb-3">
-                  {project.highlights.map((item, idx) => (
-                    <li key={idx} className="text-sm text-gray-700">
-                      • {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="text-xs text-gray-600">
-                  <p>
-                    <span className="font-medium">Methods:</span>{" "}
-                    {project.methods}
-                  </p>
-                  {project.outputs && (
-                    <div className="mt-1">
-                      <p>
-                        <span className="font-medium">Outputs:</span>
+        {/* Main Content Container */}
+        <div className="flex gap-12">
+          {/* Projects - Left Side (80%) */}
+          <div className="w-4/5">
+            <div className="space-y-10">
+              {content[language].projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 p-8 rounded-lg border-l-4 border-red-500"
+                >
+                  <div className="flex justify-between items-baseline mb-4 pb-2 border-b border-gray-200">
+                    <h3 className="text-2xl font-semibold text-gray-900">
+                      {project.title}
+                    </h3>
+                    <span className="text-lg text-gray-600">
+                      {project.period}
+                    </span>
+                  </div>
+                  <div className="text-xl text-red-600 mb-4">
+                    {project.role}
+                  </div>
+                  <div className="mb-8">
+                    <h4 className="text-xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-200">
+                      Key Achievements
+                    </h4>
+                    <ul className="list-decimal pl-5 space-y-2">
+                      {project.highlights.map((highlight, idx) => (
+                        <li key={idx} className="text-lg text-gray-700">
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="grid grid-cols-2 gap-8">
+                    <div className="bg-white p-6 rounded-lg">
+                      <h4 className="text-xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-200">
+                        Approach
+                      </h4>
+                      <p className="text-lg text-gray-700 mb-2">
+                        {project.approach.research}
                       </p>
-                      <a
-                        href={project.outputs.designSystem}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-red-600 hover:underline"
-                      >
-                        Design System
-                      </a>
-                      <span className="mx-2">|</span>
-                      <a
-                        href={project.outputs.prototype}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-red-600 hover:underline"
-                      >
-                        Interactive Prototype
-                      </a>
+                      <p className="text-lg text-gray-700">
+                        {project.approach.solution}
+                      </p>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg">
+                      <h4 className="text-xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-200">
+                        Impact
+                      </h4>
+                      <p className="text-lg text-gray-700 mb-2">
+                        <span className="font-medium">Business:</span>{" "}
+                        {project.impact.business}
+                      </p>
+                      <p className="text-lg text-gray-700">
+                        <span className="font-medium">User:</span>{" "}
+                        {project.impact.user}
+                      </p>
+                    </div>
+                  </div>
+                  {project.outputs && (
+                    <div className="mt-6 flex justify-start space-x-6">
+                      {project.outputs.designSystem && (
+                        <a
+                          href={project.outputs.designSystem}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-lg text-red-600 hover:text-red-700 hover:underline flex items-center"
+                        >
+                          <span className="mr-2">→</span>
+                          Design System
+                        </a>
+                      )}
+                      {project.outputs.prototype && (
+                        <a
+                          href={project.outputs.prototype}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-lg text-red-600 hover:text-red-700 hover:underline flex items-center"
+                        >
+                          <span className="mr-2">→</span>
+                          Interactive Prototype
+                        </a>
+                      )}
                     </div>
                   )}
-                  <p className="mt-1">
-                    <span className="font-medium">Impact:</span>{" "}
-                    {project.impact}
-                  </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-          {/* Right Side Column */}
-          <div className="space-y-8">
+
+          {/* Skills & Education - Right Side (20%) */}
+          <div className="w-1/5">
             {/* Skills */}
-            <div>
-              <h2 className="text-xl font-bold text-gray-900 mb-4">
-                Core Competencies
-              </h2>
-              {content[language].skills.map((skill, index) => (
-                <div key={index} className="mb-4">
-                  <h3 className="text-red-600 font-semibold mb-2">
-                    {skill.category}
+            <div className="bg-gray-50 p-6 rounded-lg mb-8">
+              {content[language].skills.map((skillCategory, index) => (
+                <div
+                  key={index}
+                  className="mb-8 pb-6 border-b border-gray-200 last:border-0"
+                >
+                  <h3 className="text-xl font-semibold text-red-600 mb-4">
+                    {skillCategory.category}
                   </h3>
-                  <ul className="space-y-1">
-                    {skill.items.map((item, idx) => (
-                      <li key={idx} className="text-sm text-gray-700">
-                        • {item}
+                  <ul className="space-y-2">
+                    {skillCategory.items.map((item, idx) => (
+                      <li
+                        key={idx}
+                        className="text-lg text-gray-700 flex items-start"
+                      >
+                        <span className="mr-2">•</span>
+                        {item}
                       </li>
                     ))}
                   </ul>
@@ -324,21 +383,35 @@ const Portfolio = () => {
             </div>
 
             {/* Education */}
-            <div>
-              <h2 className="text-xl font-bold text-gray-900 mb-4">
-                Education
-              </h2>
+            <div className="bg-gray-50 p-6 rounded-lg">
               {content[language].education.map((edu, index) => (
-                <div key={index} className="mb-3">
-                  <div className="flex justify-between items-baseline">
-                    <h3 className="text-md font-semibold text-gray-900">
-                      {edu.degree}
-                    </h3>
-                    <span className="text-xs text-gray-600">{edu.period}</span>
-                  </div>
-                  <p className="text-sm text-gray-700">{edu.focus}</p>
+                <div
+                  key={index}
+                  className="mb-6 pb-4 border-b border-gray-200 last:border-0"
+                >
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {edu.degree}
+                  </h3>
+                  <p className="text-lg text-red-600 mb-1">{edu.institution}</p>
+                  <p className="text-lg text-gray-600 mb-1">{edu.period}</p>
+                  <p className="text-lg text-gray-700">{edu.focus}</p>
                 </div>
               ))}
+              <div className="mt-8">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+                  {language === "en" ? "Research Interests" : "연구 관심사"}
+                </h3>
+                {content[language].academicInterests.areas.map(
+                  (area, index) => (
+                    <div key={index} className="mb-4 last:mb-0">
+                      <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                        {area.topic}
+                      </h4>
+                      <p className="text-lg text-gray-700">{area.focus}</p>
+                    </div>
+                  )
+                )}
+              </div>
             </div>
           </div>
         </div>
